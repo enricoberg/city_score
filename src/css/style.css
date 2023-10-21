@@ -1,0 +1,31 @@
+body{
+    background-color: #bef5d6;
+    background-image: linear-gradient(45deg, #bef5d6 0%, #fffc8e 77%);
+
+}
+.lightblue{
+    color: #488cbb;
+    font-family: 'Playpen Sans', cursive;
+}
+
+.card-field{
+    display: inline-block;
+}
+.back{
+    min-width: 200px;
+    max-width: 400px;
+    
+    border-radius: 10px;
+    height: 20px;
+}
+.display{
+    background-color: red;
+    width: 70%;
+    border-radius: 9px;
+    height: 18px;
+}
+.flexcardcontainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

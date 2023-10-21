@@ -1,0 +1,30 @@
+{
+  "name": "city_score",
+  "version": "1.0.0",
+  "description": "An app to get scores about the city of your choice. Project nr.4 of Backend Development master @start2impact - JavaScript Advanced",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enricoberg/city_score.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enricoberg/city_score/issues"
+  },
+  "homepage": "https://github.com/enricoberg/city_score#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "sass": "^1.69.4",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/city_icon.png?">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <title>City Score Finder</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid text-center mt-4 ">
+            <h1 class="lightblue">&#127961 CITY SCORE FINDER</h1>
+            <h4 class="fst-italic text-info">Start typing your city name and discover its current status and well-being</h4>
+        </div>
+        
+    </header>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-11 col-md-6 mx-auto">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg " list="cityList">
+                    <button class="btn btn-info text-light">&#128269</button>
+                    <datalist id="cityList">
+                        <option value="Los Angeles"></option>
+                        <option value="Buenos Aires"></option>
+                    </datalist>
+            
+                </div>
+            </div>
+        </div>
+        
+    </div>
+<div class="container my-2 descriptioncontainer">
+    <p>\u003cp\u003e\n    Los Angeles is a sprawling city of 500 square miles and the heart of a metropolitan area with 18 million residents. It is a fabled California region, home to Hollywood and America's \u003cb\u003eentertainment industry\u003c/b\u003e with \u003cb\u003eyear-round sunshine\u003c/b\u003e, world-famous beaches, and an intense \u003cb\u003ecar culture\u003c/b\u003e. The \"City of Angels\" is a magnet to people from around the world and a uniquely exciting environment.\n\u003c/p\u003e\n\n\n    \u003cp\u003eLos Angeles is one of the top ten city matches for 11.5% of Teleport users.\u003c/p\u003e\n</p>
+</div>
+<div class="flexcardcontainer">
+    <div class="card my-3 mx-3">
+        <div class="category card-field mt-2 mx-2 text-body-tertiary">CATEGORIA</div>
+        <div class="score back card-field mb-2 mx-2 border border-secondary-subtle">
+            <div class="score display"></div>
+
+        </div>
+    </div>
+
+
+
+</div>
+    
+
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
