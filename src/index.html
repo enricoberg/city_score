@@ -25,14 +25,14 @@
             
             <div class="col-11 col-md-6 mx-auto">
                 <div class="input-group">
-                    <input type="text" class="form-control form-control-lg " list="cityList">
-                    <button class="btn btn-info text-light">&#128269</button>
+                    <input type="text" class="form-control form-control-lg " list="cityList" id="searchBar">
+                    <button class="btn btn-info text-light" id="submitButton">&#128269</button>
                     <datalist id="cityList">
-                        <option value="Los Angeles"></option>
-                        <option value="Buenos Aires"></option>
+                        
                     </datalist>
-            
+                    
                 </div>
+                <div class="alertmessage text-center text-danger invisible">INVALID CITY NAME</div>
             </div>
         </div>
         
@@ -42,7 +42,7 @@
 </div>
 <div class="flexcardcontainer">
     <div class="card my-3 mx-3">
-        <div class="category card-field mt-2 mx-2 text-body-tertiary">CATEGORIA</div>
+        <div class="category card-field mt-2 mx-2 text-body-tertiary text-center">CATEGORIA</div>
         <div class="score back card-field mb-2 mx-2 border border-secondary-subtle">
             <div class="score display"></div>
 
@@ -53,7 +53,7 @@
 
 </div>
     
-
+    <script src="./js/index.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
