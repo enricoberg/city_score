@@ -1,7 +1,7 @@
 const searchBar = document.querySelector("#searchBar");
 const submitButton= document.querySelector("#submitButton");
 const jsonFile = 'js/cities.json';
-//import {City} from './model.js'
+
 
 //----------------------------------------------------------------------------------------------------------
 // LOAD ALL THE POSSIBLE CITY VALUES FOR AUTOCOMPLETE-------------------------------------------------------
@@ -39,23 +39,27 @@ function validateCity(data, cityname){
 
 }
 //----------------------------------------------------------------------------------------------------------
-searchBar.addEventListener('input',()=>{
+//ADJUST THE VALUE OF THE SEARCHBAR EACH TIME THAT IS CHANGED ----------------------------------------------
+searchBar.addEventListener('input', validateInput);
+//searchBar.addEventListener('blur', validateInput);
+
+function validateInput(){
+  
   const alertbox=document.querySelector(".alertmessage");
   alertbox.classList.add("invisible");
   alertbox.innerHTML="INVALID CITY NAME";
   if (searchBar.value=='') return;
   //CAPITALIZE THE CONTENT OF THE SEARCH BAR TO MATCH THE JSON PROPERTIES
   searchBar.value= searchBar.value[0].toUpperCase() + searchBar.value.substr(1,searchBar.value.length-1)
-  if (searchBar.value.includes(' ') || searchBar.value.includes('-')){
-    for (let i = 0; i < searchBar.value.length-1; i++){
+  for (let i = 1; i < searchBar.value.length; i++) searchBar.value= searchBar.value.substr(0,i)+ searchBar.value[i].toLowerCase() + searchBar.value.substr(i+1,searchBar.value.length-i-1);
+    for (let i = 1; i < searchBar.value.length-1; i++){
         //CAPITALIZE ALL FIRST LETTERS IN MULTIPLE-WORD CITIES
         if(searchBar.value[i]==' ' || searchBar.value[i]=='-') searchBar.value=searchBar.value.substr(0,i+1) + searchBar.value[i+1].toUpperCase() + searchBar.value.substr(i+2,searchBar.value.length-2);
-
+        
         }
-      
-  }
+}
+//-------------------------------------------------------------------------------------------------------------
 
-});
 submitButton.addEventListener('click', ()=>{
   fetch(jsonFile)
   .then(response => {
@@ -75,9 +79,13 @@ submitButton.addEventListener('click', ()=>{
 
 //FUNCTION TO ADD SPINNING CIRCLE ANIMATION DURING DATA LOADING
 function Buffering(cityname, prettyname){
+  document.querySelector(".flexcardcontainer").innerHTML='';
+  document.querySelector(".descriptioncontainer").innerHTML='';
   setTimeout(() => {
+    
     requestCity(cityname, prettyname);
     document.querySelector("#bufferanimation").classList.add("hidden");
+    
   }, 1500);
   document.querySelector("#bufferanimation").classList.remove("hidden");
 }

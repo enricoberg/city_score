@@ -59,12 +59,19 @@ The requisites for the development of the app:
   
 
 
-* [![HTML][HTML-url]][HTML-url]
+* ![HTML LOGO](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=FFF)
 
-* [![CSS][CSS-url]][CSS-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* ![CSS LOGO](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3)
+* ![BOOTSTRAP LOGO](https://img.shields.io/badge/BOOTSTRAP-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=FFF)
+<!-- * ![SASS LOGO](https://img.shields.io/badge/SASS-CC6699?style=for-the-badge&logo=SASS&logoColor=FFF) -->
 
-* [![JAVASCRIPT][JAVASCRIPT-url]][JAVASCRIPT-url]
+* ![WEBPACK LOGO](https://img.shields.io/badge/WEB-PACK-8DD6F9?style=for-the-badge&logo=Webpack)
+<!-- * ![PHP LOGO](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=PHP&logoColor=FFF) -->
+<!-- * ![LARAVEL LOGO](https://img.shields.io/badge/LARAVEL-FF2D20?style=for-the-badge&logo=Laravel&logoColor=FFF) -->
+* ![JAVASCRIPT LOGO](https://img.shields.io/badge/Java-Script-F7DF1E?style=for-the-badge&logo=Javascript)
+<!-- * ![NODE.JS LOGO](https://img.shields.io/badge/Node-JS-339933?style=for-the-badge&logo=Node.js) -->
+<!-- * ![PYTHON LOGO](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=FFF) -->
+
 
 
 
