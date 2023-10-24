@@ -1,6 +1,7 @@
 const searchBar = document.querySelector("#searchBar");
 const submitButton= document.querySelector("#submitButton");
 const jsonFile = 'js/cities.json';
+//import {City} from './model.js'
 
 //----------------------------------------------------------------------------------------------------------
 // LOAD ALL THE POSSIBLE CITY VALUES FOR AUTOCOMPLETE-------------------------------------------------------
@@ -62,9 +63,41 @@ submitButton.addEventListener('click', ()=>{
   })
   .then(data => {
     
-    validateCity(data,searchBar.value);
+    if(validateCity(data,searchBar.value)) requestCity(data[searchBar.value],searchBar.value);
   })
   .catch(error => {
     console.error(error);
   });
 });
+
+// FUNCTION TO SEND THE REQUEST OF A SPECIFIC CITY AND VISUALIZE THE DATA RECEIVED--------------------------
+
+function requestCity(cityname,prettyname){
+  const requesturl=`https://api.teleport.org/api/urban_areas/slug:${cityname}/scores/ `
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", requesturl, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+          let jsonResponse = JSON.parse(xhr.responseText);  
+             
+          let myCity = new City(prettyname,jsonResponse.teleport_city_score,jsonResponse.summary);
+          for (let category of jsonResponse.categories) {
+            myCity.addCategory(category.name, category.color, category.score_out_of_10)
+          }
+          myCity.visualizeCityData();
+          
+          
+          
+
+
+
+
+
+    } else if (xhr.readyState === 4) {
+      
+      console.error("Request failed with status: " + xhr.status);
+    }
+};
+xhr.send();
+
+}

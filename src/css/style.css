@@ -1,6 +1,9 @@
 body{
-    background-color: #bef5d6;
-    background-image: linear-gradient(45deg, #bef5d6 0%, #fffc8e 77%);
+    /* background-color: #bef5d6;
+    background-image: linear-gradient(45deg, #bef5d6 0%, #fffc8e 77%); */
+
+    background: rgb(172,247,248);
+    background: linear-gradient(128deg, #bef5d6 0%, #fffc8e 77%);
 
 }
 .lightblue{
@@ -19,8 +22,8 @@ body{
     height: 20px;
 }
 .display{
-    background-color: red;
-    width: 70%;
+    
+    
     border-radius: 9px;
     height: 18px;
 }
@@ -28,4 +31,8 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.hidden{
+    display: none;
 }
