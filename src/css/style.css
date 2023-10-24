@@ -1,9 +1,8 @@
 body{
-    /* background-color: #bef5d6;
-    background-image: linear-gradient(45deg, #bef5d6 0%, #fffc8e 77%); */
-
-    background: rgb(172,247,248);
-    background: linear-gradient(128deg, #bef5d6 0%, #fffc8e 77%);
+    
+    background-color: #e7ebec;
+/*     background: rgb(172,247,248); 
+    background: linear-gradient(128deg, #bef5d6 0%, #fffc8e 77%);   */
 
 }
 .lightblue{
@@ -33,6 +32,25 @@ body{
     flex-wrap: wrap;
 }
 
-.hidden{
+
+.spacer{
+    height: 35vh;
+}
+.loader{
+    margin: 0 0 2em;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  svg path,
+  svg rect{
+    fill: #00d4ff;
+  }
+  .hidden{
     display: none;
 }

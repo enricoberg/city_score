@@ -36,10 +36,13 @@ function validateCity(data, cityname){
  if (cityname in data) return true;
  document.querySelector(".alertmessage").classList.remove("invisible");
  return false
+
 }
 //----------------------------------------------------------------------------------------------------------
 searchBar.addEventListener('input',()=>{
-  document.querySelector(".alertmessage").classList.add("invisible");
+  const alertbox=document.querySelector(".alertmessage");
+  alertbox.classList.add("invisible");
+  alertbox.innerHTML="INVALID CITY NAME";
   if (searchBar.value=='') return;
   //CAPITALIZE THE CONTENT OF THE SEARCH BAR TO MATCH THE JSON PROPERTIES
   searchBar.value= searchBar.value[0].toUpperCase() + searchBar.value.substr(1,searchBar.value.length-1)
@@ -63,17 +66,27 @@ submitButton.addEventListener('click', ()=>{
   })
   .then(data => {
     
-    if(validateCity(data,searchBar.value)) requestCity(data[searchBar.value],searchBar.value);
+    if(validateCity(data,searchBar.value)) Buffering(data[searchBar.value],searchBar.value);
   })
   .catch(error => {
     console.error(error);
   });
 });
 
+//FUNCTION TO ADD SPINNING CIRCLE ANIMATION DURING DATA LOADING
+function Buffering(cityname, prettyname){
+  setTimeout(() => {
+    requestCity(cityname, prettyname);
+    document.querySelector("#bufferanimation").classList.add("hidden");
+  }, 1500);
+  document.querySelector("#bufferanimation").classList.remove("hidden");
+}
+
 // FUNCTION TO SEND THE REQUEST OF A SPECIFIC CITY AND VISUALIZE THE DATA RECEIVED--------------------------
 
 function requestCity(cityname,prettyname){
   const requesturl=`https://api.teleport.org/api/urban_areas/slug:${cityname}/scores/ `
+  document.querySelector(".spacer").classList.add("hidden");
   let xhr = new XMLHttpRequest();
   xhr.open("GET", requesturl, true);
   xhr.onreadystatechange = function () {
@@ -94,8 +107,8 @@ function requestCity(cityname,prettyname){
 
 
     } else if (xhr.readyState === 4) {
+      document.querySelector(".alertmessage").innerHTML=`REQUEST FAILED WITH STATUS ${xhr.status}`
       
-      console.error("Request failed with status: " + xhr.status);
     }
 };
 xhr.send();

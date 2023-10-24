@@ -27,8 +27,9 @@ class City {
     addCategoryHTML(){
         
         const cardContainer = document.querySelector(".flexcardcontainer");
+        cardContainer.innerHTML=''
         for(let category of this.categories){
-            console.log(category)
+            
             cardContainer.innerHTML += `
                             <div class="card my-3 mx-3">
                                 <div class="category card-field mt-2 mx-2 mb-3 text-body-tertiary text-center"><strong>${category.name}</strong></div>
