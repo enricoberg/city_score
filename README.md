@@ -202,7 +202,7 @@ Enrico Bergamini -  enricobergamini@outlook.it
 The project is online and you can try it now following the link:
  
 
- [https://enricoberg.github.io/city_score/](https://enricoberg.github.io/city_score/)
+ [https://unique-griffin-6a2105.netlify.app/](https://unique-griffin-6a2105.netlify.app/)
 
 <p  align="right">(<a  href="#readme-top">back to top</a>)</p>
 
