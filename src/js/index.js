@@ -1,7 +1,9 @@
 const searchBar = document.querySelector("#searchBar");
 const submitButton= document.querySelector("#submitButton");
 const jsonFile = 'js/cities.json';
-
+/* axios.get('https://reqres.in/api/users?page=2')
+.then((res)=> console.log(res))
+.catch((err)=> console.log(err)) */
 
 //----------------------------------------------------------------------------------------------------------
 // LOAD ALL THE POSSIBLE CITY VALUES FOR AUTOCOMPLETE-------------------------------------------------------
@@ -21,7 +23,7 @@ fetch(jsonFile)
   });
 
  function loadOptions(data){
-  for (key in data){
+  for (let key in data){
     const optionList = document.getElementById('cityList');
   
         

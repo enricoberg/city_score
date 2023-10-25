@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/enricoberg/city_score#readme",
   "devDependencies": {
+    "axios": "^1.5.1",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "sass": "^1.69.4",
