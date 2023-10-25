@@ -1,7 +1,8 @@
 const searchBar = document.querySelector("#searchBar");
 const submitButton= document.querySelector("#submitButton");
 const jsonFile = 'js/cities.json';
-
+import { City } from './model.js';
+import axios from 'axios';
 //----------------------------------------------------------------------------------------------------------
 // LOAD ALL THE POSSIBLE CITY VALUES FOR AUTOCOMPLETE-------------------------------------------------------
 fetch(jsonFile)

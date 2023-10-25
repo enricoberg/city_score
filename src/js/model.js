@@ -1,4 +1,4 @@
-class City {
+export class City {
     constructor(name,score,description){
         this.name=name;
         this.score=score;
