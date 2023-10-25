@@ -1,9 +1,6 @@
 const searchBar = document.querySelector("#searchBar");
 const submitButton= document.querySelector("#submitButton");
 const jsonFile = 'js/cities.json';
-/* axios.get('https://reqres.in/api/users?page=2')
-.then((res)=> console.log(res))
-.catch((err)=> console.log(err)) */
 
 //----------------------------------------------------------------------------------------------------------
 // LOAD ALL THE POSSIBLE CITY VALUES FOR AUTOCOMPLETE-------------------------------------------------------
@@ -97,30 +94,16 @@ function Buffering(cityname, prettyname){
 function requestCity(cityname,prettyname){
   const requesturl=`https://api.teleport.org/api/urban_areas/slug:${cityname}/scores/ `
   document.querySelector(".spacer").classList.add("hidden");
-  let xhr = new XMLHttpRequest();
-  xhr.open("GET", requesturl, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-          let jsonResponse = JSON.parse(xhr.responseText);  
-             
-          let myCity = new City(prettyname,jsonResponse.teleport_city_score,jsonResponse.summary);
-          for (let category of jsonResponse.categories) {
+  axios.get(requesturl)
+  .then((res)=> {       
+    let myCity = new City(prettyname,res.data.teleport_city_score,res.data.summary);
+    for (let category of res.data.categories) {
             myCity.addCategory(category.name, category.color, category.score_out_of_10)
           }
-          myCity.visualizeCityData();
-          
-          
-          
-
-
-
-
-
-    } else if (xhr.readyState === 4) {
-      document.querySelector(".alertmessage").innerHTML=`REQUEST FAILED WITH STATUS ${xhr.status}`
-      
-    }
-};
-xhr.send();
-
+    myCity.visualizeCityData();
+  })
+  .catch((err)=> {
+    document.querySelector(".alertmessage").innerHTML=`REQUEST FAILED WITH ERROR ${err}`;
+    document.querySelector(".alertmessage").classList.remove("invisible");
+  })
 }
